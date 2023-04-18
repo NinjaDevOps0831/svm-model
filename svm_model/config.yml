@@ -1,0 +1,43 @@
+# Package Overview
+package_name: svm_model
+
+# Data Files
+training_data_file: titanic_train.csv
+#test_data_file: titanic_test.csv
+
+# Variables
+# The variable we are attempting to predict (sale price)
+target: Survived
+
+pipeline_name: svm_model
+pipeline_save_file: svm_model_output_v
+
+selected_vars:
+  - Pclass
+  - Sex
+  - Age
+  - SibSp
+  - Parch
+  - Fare
+  - Embarked
+
+categorical_vars:
+  - Sex
+  - Embarked
+
+numerical_vars:
+  - Pclass
+  - Age
+  - SibSp
+  - Parch
+  - Fare
+
+
+# set train/test split
+test_size: 0.3
+
+# to set the random seed
+random_state: 0
+
+C: 100
+gamma: 0.01

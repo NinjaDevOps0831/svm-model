@@ -25,7 +25,7 @@ def run_training() -> None:
     clf.fit(X_train, y_train)
 
     # persist trained model
-    save_pipeline(pipeline_to_persist=svm_pipe)
+    save_pipeline(pipeline_to_persist=clf)
 
 
 if __name__ == "__main__":

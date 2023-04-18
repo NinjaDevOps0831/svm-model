@@ -19,8 +19,8 @@ categorical_transformer = Pipeline(
 
 preprocessor = ColumnTransformer(
     transformers=[
-        ("numerical", numeric_transformer, SELECTED_NUMERICAL_VARS),
-        ("categorical", categorical_transformer, SELECTED_CATEGORICAL_VARS),
+        ("numerical", numeric_transformer, config.model_config.numerical_vars),
+        ("categorical", categorical_transformer, config.model_config.categorical_vars),
     ]
 )
 
@@ -38,8 +38,8 @@ categorical_transformer = Pipeline(
 
 preprocessor = ColumnTransformer(
     transformers=[
-        ("numerical", numeric_transformer, SELECTED_NUMERICAL_VARS),
-        ("categorical", categorical_transformer, SELECTED_CATEGORICAL_VARS),
+        ("numerical", numeric_transformer, config.model_config.numerical_vars),
+        ("categorical", categorical_transformer, config.model_config.categorical_vars),
     ]
 )
 

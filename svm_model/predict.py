@@ -1,16 +1,15 @@
+import sys
 import typing as t
-
 import numpy as np
 import pandas as pd
 
-from svm_model import __version__ as _version
+from svm_model.version import __version__ as _version
 from svm_model.config.core import config
 from svm_model.processing.data_manager import load_pipeline
 from svm_model.processing.validation import validate_inputs
 
 pipeline_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"
 _price_pipe = load_pipeline(file_name=pipeline_file_name)
-
 
 def make_prediction(
     *,
@@ -24,7 +23,7 @@ def make_prediction(
 
     if not errors:
         predictions = _price_pipe.predict(
-            X=validated_data[config.model_config.features]
+            X=validated_data[config.model_config.selected_vars]
         )
         results = {
             "predictions": [np.exp(pred) for pred in predictions],  # type: ignore

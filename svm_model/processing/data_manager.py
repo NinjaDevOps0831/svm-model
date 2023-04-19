@@ -6,8 +6,6 @@ import joblib
 import pandas as pd
 from sklearn.pipeline import Pipeline
 
-sys.path.append('../../')
-
 from svm_model.version import __version__ as _version
 from svm_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
 

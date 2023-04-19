@@ -1,9 +1,9 @@
+import sys
 import numpy as np
-from config.core import config
-from pipeline import clf
-from processing.data_manager import load_dataset, save_pipeline
+from svm_model.config.core import config
+from svm_model.pipeline import clf
+from svm_model.processing.data_manager import load_dataset, save_pipeline
 from sklearn.model_selection import train_test_split
-
 
 def run_training() -> None:
     """Train the model."""
@@ -28,5 +28,5 @@ def run_training() -> None:
     save_pipeline(pipeline_to_persist=clf)
 
 
-if __name__ == "__main__":
-    run_training()
+# if __name__ == "__main__":
+#     run_training()

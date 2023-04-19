@@ -42,4 +42,4 @@ class TitannicDataInputSchema(BaseModel):
 
 
 class MultipleUserDataInputs(BaseModel):
-    inputs: List[HouseDataInputSchema]
+    inputs: List[TitannicDataInputSchema]
